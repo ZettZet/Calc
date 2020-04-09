@@ -526,7 +526,7 @@ namespace Calc
 
 		private void buttonNegative_Click(object sender, EventArgs e)
 		{
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			if (lexems.Length != 1 || lexems[lexems.Length - 1] != "0")
 			{
 				int nearestOperationIndex = expression.Text.LastIndexOf("+") > expression.Text.LastIndexOf("-") ? expression.Text.LastIndexOf("+") : expression.Text.LastIndexOf("-");
@@ -545,7 +545,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Sqr);
 			switch (lexems.Length)
 			{
@@ -575,7 +575,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Math.Sqrt);
 			switch (lexems.Length)
 			{
@@ -599,7 +599,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Inverse);
 			if (!string.IsNullOrEmpty(lexems.Last()))
 			{
@@ -622,7 +622,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			String[] lexems = expression.Text.Split(SplitersOperation);
+			String[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Procent);
 			double input;
 
@@ -633,7 +633,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Cube);
 			double input;
 			switch (lexems.Length)
@@ -658,7 +658,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			double input;
 			twooperation local = new twooperation(Math.Pow);
 			switch (lexems.Length)
@@ -682,7 +682,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			switch (lexems.Length)
 			{
 				case 2 when expression.Text[0] == '-':
@@ -708,7 +708,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			twooperation local = new twooperation(Math.Pow);
 			double input;
 			switch (lexems.Length)
@@ -732,7 +732,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Math.Log);
 			switch (lexems.Length)
 			{
@@ -754,7 +754,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Math.Log10);
 			switch (lexems.Length)
 			{
@@ -776,7 +776,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			operation local = new operation(Math.Exp);
 			double input;
 			switch (lexems.Length)
@@ -800,7 +800,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			ifoperation local = isInverse.Checked ? new ifoperation(Sin) : new ifoperation(Asin);
 			string input;
 			if (lexems.Length == 2)
@@ -818,7 +818,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			ifoperation local = isInverse.Checked ? new ifoperation(Cos) : new ifoperation(Acos);
 			string input;
 			if (lexems.Length == 2)
@@ -836,7 +836,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			ifoperation local = isInverse.Checked ? new ifoperation(Tan) : new ifoperation(Atan);
 			string input;
 			if (lexems.Length == 2)
@@ -854,7 +854,7 @@ namespace Calc
 		{
 			Evalueted = true;
 
-			string[] lexems = expression.Text.Split(SplitersOperation);
+			string[] lexems = expression.Text.Split(AllOperations.ToCharArray());
 			ifoperation local = isInverse.Checked ? new ifoperation(Cot) : new ifoperation(Acot);
 			string input;
 			if (lexems.Length == 2)
@@ -1071,7 +1071,7 @@ namespace Calc
 			switch (ErrorState)
 			{
 				case true:
-					expression.Font = new Font(expression.Font.FontFamily, expression.Font.Size + 10);
+					expression.Font = new Font(expression.Font.FontFamily, 26.25f);
 					expression.Text = "0";
 					EnableButtons();
 					ErrorState = false;
@@ -1099,7 +1099,7 @@ namespace Calc
 				|| expression.Text.Contains("∞") 
 				|| SplitersOperation.Contains(expression.Text.Last()))
 			{
-				expression.Font = new Font(expression.Font.FontFamily, expression.Font.Size - 10);
+				expression.Font = new Font(expression.Font.FontFamily, 16.25f);
 				expression.Text = "Неверный формат";
 				DisableButtons();
 				ErrorState = true;
@@ -1115,7 +1115,7 @@ namespace Calc
 
 					if (temp.Contains("∞"))
 					{
-						expression.Font = new Font(expression.Font.FontFamily, expression.Font.Size - 10);
+						expression.Font = new Font(expression.Font.FontFamily, 16.25f);
 						expression.Text = "Деление на ноль";
 						DisableButtons();
 						ErrorState = true;

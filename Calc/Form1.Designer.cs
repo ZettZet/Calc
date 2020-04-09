@@ -79,8 +79,11 @@ namespace Calc
             this.button9 = new System.Windows.Forms.Button();
             this.MatrixPanel = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.MatrixOperandB = new System.Windows.Forms.DataGridView();
+            this.MatrixOperandA = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.MatrixAnswer = new System.Windows.Forms.DataGridView();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Mult = new System.Windows.Forms.Button();
@@ -95,9 +98,6 @@ namespace Calc
             this.matrixMultiply = new System.Windows.Forms.Button();
             this.inversMatrix = new System.Windows.Forms.Button();
             this.determinant = new System.Windows.Forms.Button();
-            this.MatrixOperandA = new System.Windows.Forms.DataGridView();
-            this.MatrixOperandB = new System.Windows.Forms.DataGridView();
-            this.MatrixAnswer = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,11 +107,11 @@ namespace Calc
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixAnswer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixAnswer)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -204,7 +204,7 @@ namespace Calc
             this.Memory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Memory.AutoSize = true;
-            this.Memory.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Memory.Location = new System.Drawing.Point(14, 134);
             this.Memory.MinimumSize = new System.Drawing.Size(31, 36);
             this.Memory.Name = "Memory";
@@ -267,7 +267,7 @@ namespace Calc
             this.isInverse.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ScrollBar;
             this.isInverse.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.isInverse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.isInverse.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.isInverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.isInverse.Location = new System.Drawing.Point(484, 10);
             this.isInverse.Name = "isInverse";
             this.isInverse.Size = new System.Drawing.Size(78, 36);
@@ -286,7 +286,7 @@ namespace Calc
             this.isRad.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ScrollBar;
             this.isRad.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.isRad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.isRad.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.isRad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.isRad.Location = new System.Drawing.Point(404, 10);
             this.isRad.Name = "isRad";
             this.isRad.Size = new System.Drawing.Size(78, 36);
@@ -305,7 +305,7 @@ namespace Calc
             this.button10exp.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button10exp.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button10exp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10exp.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.button10exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             this.button10exp.Location = new System.Drawing.Point(484, 373);
             this.button10exp.Margin = new System.Windows.Forms.Padding(1);
             this.button10exp.MaximumSize = new System.Drawing.Size(84, 84);
@@ -325,7 +325,7 @@ namespace Calc
             this.buttonFactorial.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonFactorial.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonFactorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFactorial.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFactorial.Location = new System.Drawing.Point(404, 373);
             this.buttonFactorial.Margin = new System.Windows.Forms.Padding(1);
             this.buttonFactorial.MaximumSize = new System.Drawing.Size(84, 84);
@@ -345,7 +345,7 @@ namespace Calc
             this.buttonCubeRoot.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonCubeRoot.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonCubeRoot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCubeRoot.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCubeRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCubeRoot.Location = new System.Drawing.Point(324, 373);
             this.buttonCubeRoot.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCubeRoot.MaximumSize = new System.Drawing.Size(84, 84);
@@ -365,7 +365,7 @@ namespace Calc
             this.buttonCube.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonCube.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonCube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCube.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCube.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCube.Location = new System.Drawing.Point(244, 373);
             this.buttonCube.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCube.MaximumSize = new System.Drawing.Size(84, 84);
@@ -385,7 +385,7 @@ namespace Calc
             this.buttonExp.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonExp.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonExp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExp.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
+            this.buttonExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.buttonExp.Location = new System.Drawing.Point(84, 373);
             this.buttonExp.Margin = new System.Windows.Forms.Padding(1);
             this.buttonExp.MaximumSize = new System.Drawing.Size(84, 84);
@@ -405,7 +405,7 @@ namespace Calc
             this.buttonRand.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonRand.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonRand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRand.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonRand.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonRand.Location = new System.Drawing.Point(4, 373);
             this.buttonRand.Margin = new System.Windows.Forms.Padding(1);
             this.buttonRand.MaximumSize = new System.Drawing.Size(84, 84);
@@ -425,7 +425,7 @@ namespace Calc
             this.buttonXexpY.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonXexpY.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonXexpY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonXexpY.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonXexpY.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonXexpY.Location = new System.Drawing.Point(164, 373);
             this.buttonXexpY.Margin = new System.Windows.Forms.Padding(1);
             this.buttonXexpY.MaximumSize = new System.Drawing.Size(84, 84);
@@ -445,7 +445,7 @@ namespace Calc
             this.buttonCos.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonCos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonCos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonCos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonCos.Location = new System.Drawing.Point(484, 53);
             this.buttonCos.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCos.MaximumSize = new System.Drawing.Size(84, 84);
@@ -465,7 +465,7 @@ namespace Calc
             this.buttonCot.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonCot.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonCot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCot.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonCot.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonCot.Location = new System.Drawing.Point(484, 133);
             this.buttonCot.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCot.MaximumSize = new System.Drawing.Size(84, 84);
@@ -485,7 +485,7 @@ namespace Calc
             this.buttonPI.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonPI.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPI.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPI.Location = new System.Drawing.Point(484, 213);
             this.buttonPI.Margin = new System.Windows.Forms.Padding(1);
             this.buttonPI.MaximumSize = new System.Drawing.Size(84, 84);
@@ -505,7 +505,7 @@ namespace Calc
             this.buttonLog10.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonLog10.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonLog10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLog10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonLog10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonLog10.Location = new System.Drawing.Point(484, 293);
             this.buttonLog10.Margin = new System.Windows.Forms.Padding(1);
             this.buttonLog10.MaximumSize = new System.Drawing.Size(84, 84);
@@ -525,7 +525,7 @@ namespace Calc
             this.buttonSin.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonSin.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSin.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonSin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonSin.Location = new System.Drawing.Point(404, 53);
             this.buttonSin.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSin.MaximumSize = new System.Drawing.Size(84, 84);
@@ -545,7 +545,7 @@ namespace Calc
             this.buttonTan.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonTan.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonTan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTan.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonTan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.buttonTan.Location = new System.Drawing.Point(404, 133);
             this.buttonTan.Margin = new System.Windows.Forms.Padding(1);
             this.buttonTan.MaximumSize = new System.Drawing.Size(84, 84);
@@ -565,7 +565,7 @@ namespace Calc
             this.buttonE.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonE.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonE.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.buttonE.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
             this.buttonE.Location = new System.Drawing.Point(404, 213);
             this.buttonE.Margin = new System.Windows.Forms.Padding(1);
             this.buttonE.MaximumSize = new System.Drawing.Size(84, 84);
@@ -585,7 +585,7 @@ namespace Calc
             this.buttonLn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonLn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonLn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLn.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLn.Location = new System.Drawing.Point(404, 293);
             this.buttonLn.Margin = new System.Windows.Forms.Padding(1);
             this.buttonLn.MaximumSize = new System.Drawing.Size(84, 84);
@@ -602,7 +602,7 @@ namespace Calc
             this.buttonErase.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonErase.FlatAppearance.BorderSize = 0;
             this.buttonErase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonErase.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonErase.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonErase.Location = new System.Drawing.Point(352, 10);
             this.buttonErase.Margin = new System.Windows.Forms.Padding(2);
             this.buttonErase.MaximumSize = new System.Drawing.Size(50, 50);
@@ -620,7 +620,7 @@ namespace Calc
             this.buttonEqual.BackColor = System.Drawing.SystemColors.Highlight;
             this.buttonEqual.FlatAppearance.BorderSize = 0;
             this.buttonEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEqual.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEqual.Location = new System.Drawing.Point(298, 10);
             this.buttonEqual.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEqual.MaximumSize = new System.Drawing.Size(50, 50);
@@ -638,7 +638,7 @@ namespace Calc
             | System.Windows.Forms.AnchorStyles.Left)));
             this.expression.AutoSize = true;
             this.expression.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.expression.Font = new System.Drawing.Font("Century Gothic", 26.25F);
+            this.expression.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.expression.Location = new System.Drawing.Point(12, 10);
             this.expression.Margin = new System.Windows.Forms.Padding(2);
             this.expression.MaximumSize = new System.Drawing.Size(282, 36);
@@ -658,7 +658,7 @@ namespace Calc
             this.buttonInvert.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonInvert.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonInvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInvert.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonInvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonInvert.Location = new System.Drawing.Point(324, 53);
             this.buttonInvert.Margin = new System.Windows.Forms.Padding(1);
             this.buttonInvert.MaximumSize = new System.Drawing.Size(84, 84);
@@ -678,7 +678,7 @@ namespace Calc
             this.buttonSubstract.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonSubstract.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSubstract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSubstract.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSubstract.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSubstract.Location = new System.Drawing.Point(324, 213);
             this.buttonSubstract.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSubstract.MaximumSize = new System.Drawing.Size(84, 84);
@@ -698,7 +698,7 @@ namespace Calc
             this.buttonSqrt.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonSqrt.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSqrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSqrt.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSqrt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSqrt.Location = new System.Drawing.Point(324, 293);
             this.buttonSqrt.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSqrt.MaximumSize = new System.Drawing.Size(84, 84);
@@ -718,7 +718,7 @@ namespace Calc
             this.buttonDivide.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonDivide.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDivide.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDivide.Location = new System.Drawing.Point(324, 133);
             this.buttonDivide.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDivide.MaximumSize = new System.Drawing.Size(84, 84);
@@ -738,7 +738,7 @@ namespace Calc
             this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.Location = new System.Drawing.Point(4, 53);
             this.button7.Margin = new System.Windows.Forms.Padding(1);
             this.button7.MaximumSize = new System.Drawing.Size(84, 84);
@@ -758,7 +758,7 @@ namespace Calc
             this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.Location = new System.Drawing.Point(84, 53);
             this.button8.Margin = new System.Windows.Forms.Padding(1);
             this.button8.MaximumSize = new System.Drawing.Size(84, 84);
@@ -778,7 +778,7 @@ namespace Calc
             this.button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(84, 133);
             this.button5.Margin = new System.Windows.Forms.Padding(1);
             this.button5.MaximumSize = new System.Drawing.Size(84, 84);
@@ -798,7 +798,7 @@ namespace Calc
             this.buttonMultiply.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonMultiply.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMultiply.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMultiply.Location = new System.Drawing.Point(244, 133);
             this.buttonMultiply.Margin = new System.Windows.Forms.Padding(1);
             this.buttonMultiply.MaximumSize = new System.Drawing.Size(84, 84);
@@ -818,7 +818,7 @@ namespace Calc
             this.button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.Location = new System.Drawing.Point(164, 133);
             this.button6.Margin = new System.Windows.Forms.Padding(1);
             this.button6.MaximumSize = new System.Drawing.Size(84, 84);
@@ -838,7 +838,7 @@ namespace Calc
             this.buttonSqr.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonSqr.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSqr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSqr.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSqr.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSqr.Location = new System.Drawing.Point(244, 293);
             this.buttonSqr.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSqr.MaximumSize = new System.Drawing.Size(84, 84);
@@ -858,7 +858,7 @@ namespace Calc
             this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(4, 133);
             this.button4.Margin = new System.Windows.Forms.Padding(1);
             this.button4.MaximumSize = new System.Drawing.Size(84, 84);
@@ -878,7 +878,7 @@ namespace Calc
             this.buttonAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonAdd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.Location = new System.Drawing.Point(244, 213);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(1);
             this.buttonAdd.MaximumSize = new System.Drawing.Size(84, 84);
@@ -898,7 +898,7 @@ namespace Calc
             this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(84, 213);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.MaximumSize = new System.Drawing.Size(84, 84);
@@ -918,7 +918,7 @@ namespace Calc
             this.buttonProcent.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonProcent.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonProcent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProcent.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonProcent.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonProcent.Location = new System.Drawing.Point(244, 53);
             this.buttonProcent.Margin = new System.Windows.Forms.Padding(1);
             this.buttonProcent.MaximumSize = new System.Drawing.Size(84, 84);
@@ -938,7 +938,7 @@ namespace Calc
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(4, 213);
             this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.MaximumSize = new System.Drawing.Size(84, 84);
@@ -958,7 +958,7 @@ namespace Calc
             this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(164, 213);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.MaximumSize = new System.Drawing.Size(84, 84);
@@ -978,7 +978,7 @@ namespace Calc
             this.button0.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button0.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button0.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button0.Location = new System.Drawing.Point(84, 293);
             this.button0.Margin = new System.Windows.Forms.Padding(1);
             this.button0.MaximumSize = new System.Drawing.Size(84, 84);
@@ -998,7 +998,7 @@ namespace Calc
             this.buttonDot.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonDot.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDot.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDot.Location = new System.Drawing.Point(164, 293);
             this.buttonDot.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDot.MaximumSize = new System.Drawing.Size(84, 84);
@@ -1018,7 +1018,7 @@ namespace Calc
             this.buttonNegative.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.buttonNegative.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNegative.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNegative.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNegative.Location = new System.Drawing.Point(4, 293);
             this.buttonNegative.Margin = new System.Windows.Forms.Padding(1);
             this.buttonNegative.MaximumSize = new System.Drawing.Size(84, 84);
@@ -1038,7 +1038,7 @@ namespace Calc
             this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.Location = new System.Drawing.Point(164, 53);
             this.button9.Margin = new System.Windows.Forms.Padding(1);
             this.button9.MaximumSize = new System.Drawing.Size(84, 84);
@@ -1097,42 +1097,66 @@ namespace Calc
             this.splitContainer2.SplitterDistance = 228;
             this.splitContainer2.TabIndex = 0;
             // 
+            // MatrixOperandB
+            // 
+            this.MatrixOperandB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MatrixOperandB.Location = new System.Drawing.Point(326, 3);
+            this.MatrixOperandB.Name = "MatrixOperandB";
+            this.MatrixOperandB.Size = new System.Drawing.Size(240, 217);
+            this.MatrixOperandB.TabIndex = 5;
+            // 
+            // MatrixOperandA
+            // 
+            this.MatrixOperandA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MatrixOperandA.Location = new System.Drawing.Point(8, 3);
+            this.MatrixOperandA.Name = "MatrixOperandA";
+            this.MatrixOperandA.Size = new System.Drawing.Size(240, 217);
+            this.MatrixOperandA.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(298, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 23);
+            this.label2.Size = new System.Drawing.Size(26, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "B";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(254, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 23);
+            this.label1.Size = new System.Drawing.Size(27, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "A";
+            // 
+            // MatrixAnswer
+            // 
+            this.MatrixAnswer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MatrixAnswer.Location = new System.Drawing.Point(326, 4);
+            this.MatrixAnswer.Name = "MatrixAnswer";
+            this.MatrixAnswer.Size = new System.Drawing.Size(240, 217);
+            this.MatrixAnswer.TabIndex = 7;
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.numericUpDown2.Location = new System.Drawing.Point(180, 94);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(30, 23);
+            this.numericUpDown2.Size = new System.Drawing.Size(30, 22);
             this.numericUpDown2.TabIndex = 16;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.numericUpDown1.Location = new System.Drawing.Point(147, 21);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(30, 23);
+            this.numericUpDown1.Size = new System.Drawing.Size(30, 22);
             this.numericUpDown1.TabIndex = 15;
             // 
             // Mult
@@ -1140,7 +1164,7 @@ namespace Calc
             this.Mult.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Mult.FlatAppearance.BorderSize = 0;
             this.Mult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Mult.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Mult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Mult.Location = new System.Drawing.Point(212, 148);
             this.Mult.Margin = new System.Windows.Forms.Padding(2);
             this.Mult.Name = "Mult";
@@ -1154,7 +1178,7 @@ namespace Calc
             this.inputIn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.inputIn.FlatAppearance.BorderSize = 0;
             this.inputIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inputIn.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inputIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.inputIn.Location = new System.Drawing.Point(144, 148);
             this.inputIn.Margin = new System.Windows.Forms.Padding(2);
             this.inputIn.Name = "inputIn";
@@ -1168,7 +1192,7 @@ namespace Calc
             this.clearMatrix.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.clearMatrix.FlatAppearance.BorderSize = 0;
             this.clearMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearMatrix.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.clearMatrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.clearMatrix.Location = new System.Drawing.Point(76, 148);
             this.clearMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.clearMatrix.Name = "clearMatrix";
@@ -1182,7 +1206,7 @@ namespace Calc
             this.diagonal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.diagonal.FlatAppearance.BorderSize = 0;
             this.diagonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diagonal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.diagonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.diagonal.Location = new System.Drawing.Point(8, 148);
             this.diagonal.Margin = new System.Windows.Forms.Padding(2);
             this.diagonal.Name = "diagonal";
@@ -1196,7 +1220,7 @@ namespace Calc
             this.Sub.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Sub.FlatAppearance.BorderSize = 0;
             this.Sub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Sub.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sub.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sub.Location = new System.Drawing.Point(212, 80);
             this.Sub.Margin = new System.Windows.Forms.Padding(2);
             this.Sub.Name = "Sub";
@@ -1210,7 +1234,7 @@ namespace Calc
             this.powerMatrix.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.powerMatrix.FlatAppearance.BorderSize = 0;
             this.powerMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.powerMatrix.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.powerMatrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.powerMatrix.Location = new System.Drawing.Point(144, 80);
             this.powerMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.powerMatrix.Name = "powerMatrix";
@@ -1225,7 +1249,7 @@ namespace Calc
             this.triangular.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.triangular.FlatAppearance.BorderSize = 0;
             this.triangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.triangular.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.triangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.triangular.Location = new System.Drawing.Point(76, 80);
             this.triangular.Margin = new System.Windows.Forms.Padding(2);
             this.triangular.Name = "triangular";
@@ -1239,7 +1263,7 @@ namespace Calc
             this.transpose.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.transpose.FlatAppearance.BorderSize = 0;
             this.transpose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transpose.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold);
+            this.transpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.transpose.Location = new System.Drawing.Point(8, 80);
             this.transpose.Margin = new System.Windows.Forms.Padding(2);
             this.transpose.Name = "transpose";
@@ -1253,7 +1277,7 @@ namespace Calc
             this.Add.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Add.FlatAppearance.BorderSize = 0;
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Add.Location = new System.Drawing.Point(212, 12);
             this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
@@ -1267,7 +1291,7 @@ namespace Calc
             this.matrixMultiply.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.matrixMultiply.FlatAppearance.BorderSize = 0;
             this.matrixMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.matrixMultiply.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.matrixMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.matrixMultiply.Location = new System.Drawing.Point(144, 12);
             this.matrixMultiply.Margin = new System.Windows.Forms.Padding(2);
             this.matrixMultiply.Name = "matrixMultiply";
@@ -1282,7 +1306,7 @@ namespace Calc
             this.inversMatrix.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.inversMatrix.FlatAppearance.BorderSize = 0;
             this.inversMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inversMatrix.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold);
+            this.inversMatrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.inversMatrix.Location = new System.Drawing.Point(76, 12);
             this.inversMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.inversMatrix.Name = "inversMatrix";
@@ -1296,7 +1320,7 @@ namespace Calc
             this.determinant.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.determinant.FlatAppearance.BorderSize = 0;
             this.determinant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.determinant.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.determinant.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.determinant.Location = new System.Drawing.Point(8, 12);
             this.determinant.Margin = new System.Windows.Forms.Padding(2);
             this.determinant.Name = "determinant";
@@ -1305,30 +1329,6 @@ namespace Calc
             this.determinant.Text = "det A/B";
             this.determinant.UseVisualStyleBackColor = false;
             this.determinant.MouseDown += new System.Windows.Forms.MouseEventHandler(this.determinant_MouseDown);
-            // 
-            // MatrixOperandA
-            // 
-            this.MatrixOperandA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MatrixOperandA.Location = new System.Drawing.Point(8, 3);
-            this.MatrixOperandA.Name = "MatrixOperandA";
-            this.MatrixOperandA.Size = new System.Drawing.Size(240, 217);
-            this.MatrixOperandA.TabIndex = 4;
-            // 
-            // MatrixOperandB
-            // 
-            this.MatrixOperandB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MatrixOperandB.Location = new System.Drawing.Point(326, 3);
-            this.MatrixOperandB.Name = "MatrixOperandB";
-            this.MatrixOperandB.Size = new System.Drawing.Size(240, 217);
-            this.MatrixOperandB.TabIndex = 5;
-            // 
-            // MatrixAnswer
-            // 
-            this.MatrixAnswer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MatrixAnswer.Location = new System.Drawing.Point(326, 4);
-            this.MatrixAnswer.Name = "MatrixAnswer";
-            this.MatrixAnswer.Size = new System.Drawing.Size(240, 217);
-            this.MatrixAnswer.TabIndex = 7;
             // 
             // Form1
             // 
@@ -1356,11 +1356,11 @@ namespace Calc
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatrixAnswer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixOperandB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatrixAnswer)).EndInit();
             this.ResumeLayout(false);
 
         }
