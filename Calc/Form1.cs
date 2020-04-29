@@ -30,10 +30,11 @@ namespace Calc {
 		private Pars Pars { get; } = new Pars();
 		private string ToComputeExprsion { get; set; } = new string(new char[] { '\0' });
 		public char[] SplitersOperation { get; } = new char[] { '+', '-', '/', '×' };
-		public string AllOperations { get; } = "+-/×^";
+		public string AllOperations { get; } = "+-/×^%";
 		public bool ErrorState { get; set; }
 		public bool Evalueted { get; set; }
 		private Color[] colors;
+		public int CountBranches { get; set; }
 		#endregion
 
 		#region Унарные функции, которые считаются сразу
@@ -43,6 +44,7 @@ namespace Calc {
 		private static double Cube(double x) => x * x * x;
 		private static double ToAngle(double x) => Math.Round(x * 180 / Math.PI, 8);
 		private static double ToRadians(double x) => Math.Round(x * Math.PI / 180, 10);
+		private static double Mod(double x, double y) => x - y * Math.Floor(x / y);
 		private static double Tan(string x, bool isRad) {
 			try {
 				double value = double.Parse(x);
@@ -141,14 +143,9 @@ namespace Calc {
 
 		#region Дополнительные методы
 		private void SaveColor() {
-			int n = splitContainer1.Panel1.Controls.Count + splitContainer1.Panel2.Controls.Count;
 			int i = 0;
-			colors = new Color[n];
-			foreach(Control item in splitContainer1.Panel1.Controls) {
-				colors[i] = item.BackColor;
-				i++;
-			}
-			foreach(Control item in splitContainer1.Panel2.Controls) {
+			colors = new Color[Controls.Count];
+			foreach(Control item in Controls) {
 				colors[i] = item.BackColor;
 				i++;
 			}
@@ -157,21 +154,31 @@ namespace Calc {
 		private string PrepareStringToCompute(string ex) {
 			ex = ex.TrimStart('+');
 			string[] lexems = ex.Split(SplitersOperation);
-			int i = 0;
 			foreach(string str in lexems) {
 				if(str.Contains('^')) {
 					string[] mini = str.Split('^');
-					ex = ex.Replace(str, $"Pow({mini[0]},{mini[1]})");
+					string temp = "";
+					for(int i = 1; i < mini.Length; i++) {
+						temp += "Pow(";
+					}
+					temp += $"{mini[0]},";
+					for(int i = 1; i < mini.Length; i++) {
+						temp += $"{mini[i]}),";
+					}
+					temp = temp.TrimEnd(',');
+					ex = ex.Replace(str, temp);
 				}
-				i++;
 			}
+			Regex regex = new Regex(@"[+-]*\d+\%[+-]*\d+");
+			MatchCollection modulo = regex.Matches(expression.Text);
+			foreach(object item in modulo) {
+				string[] mini = item.ToString().Split('%');
+				ex = ex.Replace(item.ToString(), ConvertToString(Mod(double.Parse(mini[0]), double.Parse(mini[1]))));
+			}		
 			return ex.Replace('×', '*');
 		}
 		private void DisableButtons() {
-			foreach(Control item in splitContainer1.Panel1.Controls) {
-				item.Enabled = false;
-			}
-			foreach(Control item in splitContainer1.Panel2.Controls) {
+			foreach(Control item in Controls) {
 				item.Enabled = false;
 				item.BackColor = Color.LightGray;
 			}
@@ -180,12 +187,7 @@ namespace Calc {
 		}
 		private void EnableButtons() {
 			int i = 0;
-			foreach(Control item in splitContainer1.Panel1.Controls) {
-				item.Enabled = true;
-				item.BackColor = colors[i];
-				i++;
-			}
-			foreach(Control item in splitContainer1.Panel2.Controls) {
+			foreach(Control item in Controls) {
 				item.Enabled = true;
 				item.BackColor = colors[i];
 				i++;
@@ -253,26 +255,29 @@ namespace Calc {
 				case "e":
 					buttonE_Click(buttonE, new EventArgs());
 					break;
+				case "^":
+					buttonXexpY_Click(buttonXexpY, new EventArgs());
+					break;
 				default:
 					Console.WriteLine(e.KeyChar.ToString());
 					break;
 			}
 		}
 		private void engeneer_CheckedChanged(object sender, EventArgs e) {
-			splitContainer1.Panel2.Show();
-			Memory.Show();
-			buttonMemoryAddSubstract.Show();
-			MaximumSize = new Size(718, 495);
-			Size = new Size(718, 495);
-			MinimumSize = new Size(718, 495);
+			MaximumSize = new Size(580, 532);
+			Size = new Size(580, 532);
+			MinimumSize = new Size(580, 532);
+			buttonEqual.Location = new Point(484, 7);
+			buttonErase.Location = new Point(524, 7);
+			expression.Size = new Size(480, 36);
 		}
 		private void ordinary_CheckedChanged(object sender, EventArgs e) {
-			splitContainer1.Panel2.Show();
-			Memory.Show();
-			buttonMemoryAddSubstract.Show();
-			MinimumSize = new Size(555, 412);
-			Size = new Size(555, 412);
-			MaximumSize = new Size(555, 412);
+			MinimumSize = new Size(419, 451);
+			Size = new Size(419, 451);
+			MaximumSize = new Size(419, 451);
+			buttonEqual.Location = new Point(324, 7);
+			buttonErase.Location = new Point(364, 7);
+			expression.Size = new Size(318, 36);
 		}
 		private void isRad_CheckedChanged(object sender, EventArgs e) {
 			isRad.Text = isRad.Checked ? "RAD" : "DEG";
@@ -300,6 +305,7 @@ namespace Calc {
 				ErrorState = true;
 			}
 		}
+		private void Expression_Enter(object sender, EventArgs e) => buttonEqual.Focus();
 		#endregion
 
 		#region Кнопки унарных операций
@@ -310,6 +316,9 @@ namespace Calc {
 
 				if(nearestOperationIndex != -1) {
 					expression.Text = $"{expression.Text.Substring(0, nearestOperationIndex)}{expression.Text.Substring(nearestOperationIndex).Remove(0, 1).Insert(0, expression.Text[nearestOperationIndex] == '+' ? "-" : "+")}";
+				}
+				else if(expression.Text.Contains("%")) {
+					expression.Text = expression.Text.Insert(expression.Text.LastIndexOf("%") + 1, "-");
 				}
 				else if(!(expression.Text.EndsWith("+") || expression.Text.EndsWith("-"))) {
 					expression.Text = expression.Text.Insert(0, "-");
@@ -608,6 +617,15 @@ namespace Calc {
 				expression.Text += "^";
 			}
 		}
+		private void buttonMod_Click(object sender, EventArgs e) {
+			Evalueted = false;
+			if(AllOperations.Contains(expression.Text.Last())) {
+				expression.Text = $"{expression.Text.Remove(expression.Text.Length - 1, 1)}%";
+			}
+			else {
+				expression.Text += "%";
+			}
+		}
 		#endregion
 
 		#region Кнопки ввода чисел
@@ -722,6 +740,28 @@ namespace Calc {
 			operat local = new operat(rand.NextDouble);
 			expression.Text = Apply(expression.Text, lexems.Last(), local);
 		}
+		private void ButtonLeftBranch_Click(object sender, EventArgs e) {
+			if(expression.Text == "0" || Evalueted) {
+				expression.Text = "(";
+				Evalueted = false;
+				CountBranches = 1;
+			}
+			else {
+				expression.Text += "(";
+				CountBranches++;
+			}
+		}
+		private void ButtonRightBranch_Click(object sender, EventArgs e) {
+			if((expression.Text == "0" || Evalueted) && expression.Text.IndexOfAny(AllOperations.ToCharArray()) == -1) {
+				expression.Text = ")";
+				Evalueted = false;
+				CountBranches = -1;
+			}
+			else {
+				expression.Text += ")";
+				CountBranches--;
+			}
+		}
 		#endregion
 
 		#region Кнопки множественного нажатия
@@ -784,7 +824,10 @@ namespace Calc {
 					}
 				}
 				catch(Exception A) {
-					Console.WriteLine($"{A.Message}\n{A.InnerException}");
+					expression.Font = new Font(expression.Font.FontFamily, 16.25f);
+					expression.Text = A.Message;
+					DisableButtons();
+					ErrorState = true;
 				}
 			}
 		}
